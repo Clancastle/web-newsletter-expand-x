@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="main.js"></script>
+    <title>Kaizen Newsletter</title>
+    <link rel="icon" href="conk.jpeg?version=2">
+</head>
+
+<body>
+    <!--make some menu, where i can access past issues, nad i can access some quotes or some images.-->
+    <h1 class="center font" id="sign-up-text">Sign up for our newsletter.</h1>
+    <img src="f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
+
+    <form id="form" action="/">
+        <div class="center cntrl">
+            <h1 id="no_regret">You won't regret.</h1>
+        </div>
+        <div class="center cntrl"><br>
+            <div class="error"></div>
+            <input id="email" type="text" placeholder="Email"><br>
+        </div>
+        <div class="center cntrl">
+            <div class="error"></div>
+            <input id="age" placeholder="Age" type="number" step="1" min="14" max="100"><br>
+        </div>
+        <div class="center cntrl">
+            <div class="error"></div>
+            <input id="fname" placeholder="First Name" type="text"><br>
+        </div>
+        <div class="center cntrl">
+            <div class="error"></div>
+            <input id="lname" placeholder="Last Name" type="text"><br>
+        </div>
+        <div class="center cntrl">
+            <div class="error"></div>
+            <button class="center" id="button_submit" type="submit">Sign-up</button><br>
+        </div>
+    </form>
+
+    <h3 class="center font disc">Our newsletter is owned by a developer.<br>
+    We mostly talk about business, self-improvement, wisdom,<br>
+    learning, and things connected to these topics.</h3><br>
+    <script>
+        var xml = new XMLHttpRequest();
+xml.open("POST","{{url_for('func.func')}}",true); 
+xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+xml.onload = function(){
+    var dataReply = JSON.parse(this.responseText);
+};//endfunction
+
+dataSend= JSON.stringify({
+    'email': document.getElementById('email').value,
+    'fname': document.getElementById('fname').value,
+    'lanme': document.getElementById('lname').value,
+    'age': document.getElementById('age').value,
+});
+
+xml.send(dataSend);
+
+    </script>
+</body>
+<footer>†</footer>
+</html>
