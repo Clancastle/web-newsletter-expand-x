@@ -44,24 +44,35 @@
     We mostly talk about business, self-improvement, wisdom,<br>
     learning, and things connected to these topics.</h3><br>
     <script>
-        var xml = new XMLHttpRequest();
-xml.open("POST","{{url_for('func.func')}}",true); 
-xml.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        var form = document.getElementById('form');
 
-xml.onload = function(){ //down error occurred
-    var dataReply = JSON.parse(this.responseText);
-};//endfunction
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var xml = new XMLHttpRequest();
+    xml.open("POST", "/func", true);
+    xml.setRequestHeader("Content-type", "application/json");
 
-dataSend= JSON.stringify({
-    'email': document.getElementById('email').value,
-    'fname': document.getElementById('fname').value,
-    'lanme': document.getElementById('lname').value,
-    'age': document.getElementById('age').value,
+    xml.onload = function() {
+        var dataReply = JSON.parse(this.responseText);
+        // Process the response if needed
+    };
+
+    var email = document.getElementById('email').value;
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var age = document.getElementById('age').value;
+
+    var dataSend = JSON.stringify({
+        'email': email,
+        'fname': fname,
+        'lname': lname,
+        'age': age
+    });
+
+    xml.send(dataSend);
 });
-
-xml.send(dataSend);
-
     </script>
 </body>
 <footer>†</footer>
 </html>
+<!-- use ajax requests -->
