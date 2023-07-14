@@ -4,6 +4,8 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/k-signup', methods=['GET', 'POST'])
 def signup():
+    t = request.method
+    print(t)
     return render_template('signup.html')
 
 

@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="main.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="main.js"></script>
-    <title>Kaizen Newsletter</title>
-    <link rel="icon" href="conk.jpeg?version=2">
-</head>
+{% extends "base.html" %} {% block title %}<title>Kaizen Sign-Up</title>
+<link rel="stylesheet" href="static/main.css">
+<script type="text/javascript" defer src="{{ url_for('static', filename='main.js') }}"></script>
+{% endblock %}
+{% block content %}
 
-<body>
+
     <!--make some menu, where i can access past issues, nad i can access some quotes or some images.-->
     <h1 class="center font" id="sign-up-text">Sign up for our newsletter.</h1>
-    <img src="f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
+    <img src="static/f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
 
     <form id="form" method="POST"> <!--doesnt work(POST)-->
         <div class="center cntrl">
@@ -40,8 +35,5 @@
     <h3 class="center font disc">Our newsletter is owned by a developer.<br>
     We mostly talk about business, self-improvement, wisdom,<br>
     learning, and things connected to these topics.</h3><br>
-
-</body>
-<footer>†</footer>
-</html>
+{% endblock content %}
 <!-- use ajax requests -->
