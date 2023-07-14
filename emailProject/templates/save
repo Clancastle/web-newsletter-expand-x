@@ -1,3 +1,7 @@
+#this templates is for expanding my newsletter or my website since i am planning on expanding it
+
+
+///
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +18,7 @@
     <h1 class="center font" id="sign-up-text">Sign up for our newsletter.</h1>
     <img src="f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
 
-    <form id="form" method="/"> <!--doesnt work(POST)-->
+    <form id="form" method="POST"> <!--doesnt work(POST)-->
         <div class="center cntrl">
             <h1 id="no_regret">You won't regret.</h1>
         </div>
@@ -45,3 +49,4 @@
 <footer>†</footer>
 </html>
 <!-- use ajax requests -->
+///
