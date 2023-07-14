@@ -14,7 +14,7 @@
     <h1 class="center font" id="sign-up-text">Sign up for our newsletter.</h1>
     <img src="f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
 
-    <form id="form" action="/">
+    <form id="form" method="/"> <!--doesnt work(POST)-->
         <div class="center cntrl">
             <h1 id="no_regret">You won't regret.</h1>
         </div>
@@ -24,7 +24,7 @@
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input id="age" placeholder="Age" type="number" step="1" min="14" max="100"><br>
+            <input id="age" placeholder="Age" type="number" step="1" min="12" max="100"><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
@@ -34,44 +34,13 @@
             <div class="error"></div>
             <input id="lname" placeholder="Last Name" type="text"><br>
         </div>
-        <div class="center cntrl">
-            <div class="error"></div>
-            <button class="center" id="button_submit" type="submit">Sign-up</button><br>
-        </div>
+        <button class="center cntrl" id="button_submit" type="submit">Sign-up</button><br>
     </form>
 
     <h3 class="center font disc">Our newsletter is owned by a developer.<br>
     We mostly talk about business, self-improvement, wisdom,<br>
     learning, and things connected to these topics.</h3><br>
-    <script>
-        var form = document.getElementById('form');
 
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    var xml = new XMLHttpRequest();
-    xml.open("POST", "/func", true);
-    xml.setRequestHeader("Content-type", "application/json");
-
-    xml.onload = function() {
-        var dataReply = JSON.parse(this.responseText);
-        // Process the response if needed
-    };
-
-    var email = document.getElementById('email').value;
-    var fname = document.getElementById('fname').value;
-    var lname = document.getElementById('lname').value;
-    var age = document.getElementById('age').value;
-
-    var dataSend = JSON.stringify({
-        'email': email,
-        'fname': fname,
-        'lname': lname,
-        'age': age
-    });
-
-    xml.send(dataSend);
-});
-    </script>
 </body>
 <footer>†</footer>
 </html>
