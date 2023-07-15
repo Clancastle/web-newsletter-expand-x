@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block title %}<title>Newsletter</title>
 <!--<link rel="icon" href="static/conk.jpeg">-->
 <link rel="stylesheet" href="static/main.css">
-<script type="text/javascript" defer src="{{ url_for('static', filename='main.js') }}"></script>
+<script type="text/javascript" defer src="{{ url_for('static', filename='signup.js') }}"></script>
 <link rel="icon" href="static/conk.jpeg">
 {% endblock %}
 {% block content %}
@@ -37,7 +37,7 @@
     The jQuery or $ function is a powerful and widely used JavaScript library that provides a simplified way to interact with HTML documents,
     manipulate DOM elements, handle events, make AJAX requests, and perform various other tasks.-->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script> //AJAX (Asynchronous JavaScript and XML)
+    <script defer> //AJAX (Asynchronous JavaScript and XML)
 
 
     $(document).ready(function() { //when doc is fully loaded/ready, it then executes code. (when ready)
@@ -68,7 +68,8 @@
       });
     });
     </script>
-    <!-- make the site redirect or clear after submission, also make a limit of how often you can send a post req. -->
+
+
     <h3 class="center font disc">Our newsletter is owned by a developer.<br>
     We mostly talk about business, self-improvement, wisdom,<br>
     learning, and things connected to these topics.</h3><br>

@@ -1,0 +1,59 @@
+<!-- opens jsquery, $ is for jsquery
+    The jQuery or $ function is a powerful and widely used JavaScript library that provides a simplified way to interact with HTML documents,
+    manipulate DOM elements, handle events, make AJAX requests, and perform various other tasks.-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!--    <script> //AJAX (Asynchronous JavaScript and XML)-->
+
+
+<!--    $(document).ready(function() { //when doc is fully loaded/ready, it then executes code. (when ready)-->
+<!--      $('#form').submit(function(event) { // looks for element with id=form, then submits-->
+<!--        event.preventDefault(); // Prevent the form from submitting normally-->
+
+<!--        // Collect form data-->
+<!--        var formData = { // makes a variable, and selects DOM in form, vlues and makes it a list or smtn-->
+<!--          email: $('#email').val(),-->
+<!--          age: $('#age').val(),-->
+<!--          fname: $('#fname').val(),-->
+<!--          lname: $('#lname').val()-->
+<!--        }; // grabs the values by the DOM id name-->
+
+<!--        // Send AJAX request-->
+<!--        $.ajax({ //calls jquery, and sends AJAX request and POST method with url(auth.signup)-->
+<!--          url: "{{ url_for('auth.signup') }}", // and contains var formData-->
+<!--          type: "POST",-->
+<!--          data: formData,-->
+<!--          success: function(response) { // This is a callback function that executes when the AJAX request is successful. It receives the response from the server as an argument (response). In this example, it logs the response to the console using console.log().-->
+<!--            // console.log(response); // Log the response from the server-->
+<!--          },-->
+<!--          error: function(error) {-->
+<!--            // console.log(error); // Log any errors that occur-->
+<!--          } // This is a callback function that executes if there is an error in the AJAX request.-->
+<!--          // It receives the error information as an argument (error). In this example, it logs the error to the console using console.log().-->
+<!--        });-->
+<!--      });-->
+<!--    });-->
+<!--    </script>-->
+
+
+// Only submit the form if all inputs are valid
+//
+  //} // POST ran 200, jus wasnt printed
+  // Send AJAX request to Flask route
+//    const xhr = new XMLHttpRequest();
+//    xhr.open('POST', '{{ url_for("auth.signup") }}', true);
+//    xhr.setRequestHeader('Content-Type', 'application/json');
+//    xhr.onreadystatechange = function () {
+//        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+//            console.log('Form data saved successfully.');
+//        } else if (xhr.readyState === XMLHttpRequest.DONE && xhr.status !== 200) {
+//            console.log('Failed to save form data.');
+//        }
+//    };
+//    xhr.send(JSON.stringify(data));
+
+const inputs = document.querySelectorAll('.cntrl input');
+    const isValid = Array.from(inputs).every(input => input.parentElement.classList.contains('success'));
+
+    if (isValid) {
+        form.submit();
+    }

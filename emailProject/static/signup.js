@@ -67,4 +67,10 @@ const validateInputs = () => {
     } else {
         setSuccess(email);
     }
+    const inputs = document.querySelectorAll('.cntrl input');
+    const isValid = Array.from(inputs).every(input => input.parentElement.classList.contains('success'));
+
+    if (isValid) {
+        form.submit();
+    }
 };
