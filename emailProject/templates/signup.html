@@ -11,7 +11,7 @@
     <h1 class="center font" id="sign-up-text">Sign up for our newsletter.</h1>
     <img src="static/f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
 
-    <form id="form" method="POST"> <!--doesnt work(POST)-->
+    <form id="form" method="POST" action="{{ url_for('auth.signup') }}"> <!--doesnt work(POST)-->
         <div class="center cntrl">
             <h1 id="no_regret">You won't regret.</h1>
         </div>
@@ -33,9 +33,43 @@
         </div>
         <button class="center cntrl" id="button_submit" type="submit">Sign-up</button><br>
     </form>
+<!-- opens jsquery, $ is for jsquery
+    The jQuery or $ function is a powerful and widely used JavaScript library that provides a simplified way to interact with HTML documents,
+    manipulate DOM elements, handle events, make AJAX requests, and perform various other tasks.-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script> //AJAX (Asynchronous JavaScript and XML)
 
+
+    $(document).ready(function() { //when doc is fully loaded/ready, it then executes code. (when ready)
+      $('#form').submit(function(event) { // looks for element with id=form, then submits
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Collect form data
+        var formData = { // makes a variable, and selects DOM in form, vlues and makes it a list or smtn
+          email: $('#email').val(),
+          age: $('#age').val(),
+          fname: $('#fname').val(),
+          lname: $('#lname').val()
+        }; // grabs the values by the DOM id name
+
+        // Send AJAX request
+        $.ajax({ //calls jquery, and sends AJAX request and POST method with url(auth.signup)
+          url: "{{ url_for('auth.signup') }}", // and contains var formData
+          type: "POST",
+          data: formData,
+          success: function(response) { // This is a callback function that executes when the AJAX request is successful. It receives the response from the server as an argument (response). In this example, it logs the response to the console using console.log().
+            // console.log(response); // Log the response from the server
+          },
+          error: function(error) {
+            // console.log(error); // Log any errors that occur
+          } // This is a callback function that executes if there is an error in the AJAX request.
+          // It receives the error information as an argument (error). In this example, it logs the error to the console using console.log().
+        });
+      });
+    });
+    </script>
+    <!-- make the site redirect or clear after submission, also make a limit of how often you can send a post req. -->
     <h3 class="center font disc">Our newsletter is owned by a developer.<br>
     We mostly talk about business, self-improvement, wisdom,<br>
     learning, and things connected to these topics.</h3><br>
 {% endblock content %}
-<!-- use ajax requests -->
