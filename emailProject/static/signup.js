@@ -64,7 +64,7 @@ const validateInputs = () => {
     if (emailValue === "") {
         setError(email, "Email is required");
     } else if (!isValidEmail(emailValue)) {
-        setError(email, "Invalid Email");
+        setError(email, "Make sure that is your correct name.");
     } else {
         setSuccess(email);
     }
