@@ -3,6 +3,7 @@ const email = document.getElementById('email');
 const fname = document.getElementById('fname');
 const lname = document.getElementById('lname');
 const age = document.getElementById('age');
+const submitButton = document.getElementById('button_submit');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -40,7 +41,7 @@ const validateInputs = () => {
 
     if (fnameValue === "") {
         setError(fname, "First Name is required");
-    } else if (fnameValue.length < 3 || fnameValue.length > 20 || /\d/.test(fnameValue)) {
+    } else if (fnameValue.length < 3 || fnameValue.length > 20 || /\d/.test(fnameValue) || /[\d\W]/.test(fnameValue)) {
         setError(fname, "First Name must be between 3 and 20 characters and should not contain numbers");
     } else {
         setSuccess(fname);
@@ -48,7 +49,7 @@ const validateInputs = () => {
 
     if (lnameValue === "") {
         setError(lname, "Last Name is required");
-    } else if (lnameValue.length < 3 || lnameValue.length > 25 || /\d/.test(lnameValue)) {
+    } else if (lnameValue.length < 3 || lnameValue.length > 25 || /\d/.test(lnameValue) || /[\d\W]/.test(lnameValue)) {
         setError(lname, "Last Name must be between 3 and 25 characters and should not contain numbers");
     } else {
         setSuccess(lname);
@@ -70,7 +71,10 @@ const validateInputs = () => {
     const inputs = document.querySelectorAll('.cntrl input');
     const isValid = Array.from(inputs).every(input => input.parentElement.classList.contains('success'));
 
-    if (isValid) {
-        form.submit();
-    }
+    submitButton.disabled = !isValid;
 };
+// Add event listeners to input fields
+email.addEventListener('input', validateInputs);
+fname.addEventListener('input', validateInputs);
+lname.addEventListener('input', validateInputs);
+age.addEventListener('input', validateInputs);
