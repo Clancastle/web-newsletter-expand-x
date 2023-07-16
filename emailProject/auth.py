@@ -14,12 +14,12 @@ def signup():
             un_lname = request.form.get('lname')
             # print(re.fullmatch(e_re, un_email))
             try:
-                if len(un_fname) < 25 and len(un_fname) > 4 and not re.search(r'[\d\W]', un_fname):
+                if len(un_fname) <= 25 and len(un_fname) >= 3 and not re.search(r'[\d\W]', un_fname):
                     print('validation: first name passed')
                 else:
                     print('validation: first name failed')
-                if len(un_lname) < 25 and len(un_lname) > 4 and not re.search(r'[\d\W]', un_lname):
-                    print('validation: last name passed')
+                if len(un_lname) <= 25 and len(un_lname) >= 3 and not re.search(r'[\d\W]', un_lname):
+                    print('validation: last name passed' )
                 else:
                     print('validation: last name failed')
                 if un_age.isdigit() and 10 < int(un_age) < 100: #re.match(r'^\d+$', un_age
