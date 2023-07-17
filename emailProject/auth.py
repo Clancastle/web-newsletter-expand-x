@@ -8,6 +8,7 @@ k = "k string"
 def signup():
     e_re = re.compile(r"([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
     if request.method == 'POST':
+
         def Validate():
             un_email = request.form.get('email')
             un_age = request.form.get('age')
