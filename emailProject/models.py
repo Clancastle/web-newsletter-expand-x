@@ -2,15 +2,8 @@ import sqlite3
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__)
-@app.route('/')
-def create_table():
-    conn = sqlite3.connect('emails.db')
-    cursor = conn.cursor()
 
-    cursor.execute('CREATE TABLE IF NOT EXISTS email_table (emails VARCHAR(100))')
+conn = sqlite3.connect('non_sensitive_data.db')
+cursor = conn.cursor()
 
-    cursor.close()
-    conn.close()
-
-    return 'Created successfully'
+cursor.execute('CREATE TABLE IF NOT EXISTS user_data (first_name VARCHAR(20), last_name VARCHAR(25), age INT, email VARCHAR(80))')
