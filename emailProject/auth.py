@@ -1,8 +1,9 @@
 from flask import request, render_template, Blueprint, redirect, jsonify
 import re
 
-auth = Blueprint('auth', __name__)
 
+auth = Blueprint('auth', __name__)
+k = "kkkkkk"
 @auth.route('/k-signup', methods=['GET', 'POST'])
 def signup():
     e_re = re.compile(r"([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([-!#-'*+/-9=?A-Z^-~]+(\.[-!#-'*+/-9=?A-Z^-~]+)*|\[[\t -Z^-~]*])")
@@ -26,10 +27,11 @@ def signup():
                     print('validation: age passed')
                 else:
                     print('validation: age failed')
-                if re.match(e_re, un_email):
+                if re.match(e_re, un_email) and len(un_email) < 100:
                     print('validation: email passed')
                 else:
                     print('validation: email failed')
+                print(k)
             except Exception as e:
                 print(str(e))
         Validate()

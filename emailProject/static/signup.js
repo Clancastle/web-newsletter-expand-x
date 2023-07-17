@@ -5,6 +5,8 @@ const lname = document.getElementById('lname');
 const age = document.getElementById('age');
 const submitButton = document.getElementById('button_submit');
 
+submitButton.disabled
+
 form.addEventListener('submit', e => {
     e.preventDefault();
     validateInputs();
