@@ -1,13 +1,14 @@
 from flask import request, render_template, Blueprint, redirect, jsonify, url_for
 import re
 import sqlite3
+# from entryEmail import send
 
 
 auth = Blueprint('auth', __name__)
 k = "k string"
 @auth.route('/k-signup', methods=['GET', 'POST'])
 def signup():
-    conn = sqlite3.connect('non_sensitive_data.db')
+    conn = sqlite3.connect('emailProject/non_sensitive_data.db')
     cursor = conn.cursor()
     cursor.execute('CREATE TABLE IF NOT EXISTS user_data (first_name VARCHAR(20), last_name VARCHAR(25), age INT, email VARCHAR(249))')
 
@@ -61,6 +62,8 @@ def signup():
             print(un_fname, un_lname, un_age, un_email)
         except Exception as e:
             print(str(e))
+
+            # send(fname, un_email)
 
         cursor.close()
         conn.close()
