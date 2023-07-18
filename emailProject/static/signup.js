@@ -83,10 +83,15 @@ const checkFormValidity = () => {
   submitButton.disabled = !isValid; // Enable/disable submit button based on form validity
 
   if (isValid) {
-    form.submit(); // Submit the form if it's valid
+    submitButton.disabled = false;
+
+    // if submit is clicked, //form.submit(); + go home page
+    // Submit the form if it's valid
     // Alternatively, you can use:
     // window.location.href = '/'; // Redirect to the home page
   }
+
+
 };
 
 // Add event listeners to input fields

@@ -51,7 +51,7 @@ def signup():
 
 
             cursor.execute('INSERT INTO user_data (first_name, last_name, age, email) VALUES (?, ?, ?, ?)', (un_fname, un_lname, un_age, un_email))
-
+            cursor.execute('DELETE FROM user_data WHERE rowid NOT IN (SELECT MIN(rowid) FROM user_data GROUP BY email)')
             conn.commit()
 
             cursor.execute('SELECT * FROM user_data ')
@@ -66,11 +66,6 @@ def signup():
         conn.close()
 
         # print(request.form)
-
-        if validation_passed:
-            return redirect(url_for('views.home'))
-        else:
-            return redirect(url_for('auth.unsubscribe'))
 
     return render_template('signup.html')
 
