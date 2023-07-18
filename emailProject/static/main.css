@@ -2,7 +2,26 @@
 
 body {
   font-family: 'ply disply';
-  background-color: #3a5a40;
+  background-color: #A3B18A;
+}
+.white_text {
+    color: #DAD7CD;
+}
+.black {
+    background-color: black;
+}
+
+.bottom {
+  bottom: 0;
+  right: 0; /* Align the navbar to the right */
+  width: 100%;
+  background-color: black;
+  color: #DAD7CD;
+  display: flex-end;
+  justify-content: flex-end;
+}
+.bottom h3.center {
+  margin: 0;
 }
 
 #img_sait {
@@ -38,12 +57,10 @@ input {
 }
 
 input:hover {
-  background-color: #a3b18a;
+  background-color: #DAD7CD;
+  color: black;
 }
 
-#button_submit:hover {
-  background-color: #a3b18a;
-}
 
 #fname,
 #lname,
@@ -55,6 +72,13 @@ input:hover {
   padding-left: 25px;
   padding-right: 25px;
   color: #3a5a40;
+}
+#button_submit {
+    color: #DAD7CD;
+}
+#button_submit:hover {
+  color: #3a5a40;
+  background-color: #DAD7CD;
 }
 
 #no_regret {
@@ -94,9 +118,12 @@ input:hover {
   top: 0;
   right: 0; /* Align the navbar to the right */
   width: 100%;
-  background-color: rgba(218, 215, 205, 0.965);
+  background-color: rgba(58, 90, 64, 0.965);
   display: flex-end;
   justify-content: flex-end;
+}
+.black_text {
+    color: black;
 }
 
 .navbar::after {

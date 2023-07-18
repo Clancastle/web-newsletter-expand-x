@@ -7,12 +7,12 @@
 {% block content %}
     <div class="content-wrapper">
     <!--make some menu, where i can access past issues, nad i can access some quotes or some images.-->
-        <h1 class="center font content-wrapper" id="sign-up-text">Sign up for our newsletter.</h1>
+        <h1 class="center font content-wrapper black_text" id="sign-up-text">Sign up for our newsletter.</h1>
         <img src="static/f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
     </div>
     <form id="form" method="POST" action="{{ url_for('auth.signup') }}"> <!--doesnt work(POST)-->
         <div class="center cntrl">
-            <h1 id="no_regret">You won't regret.</h1>
+            <h1 id="no_regret " class="black_text">You won't regret.</h1>
         </div>
         <div class="center cntrl"><br>
             <div class="error"></div>
@@ -30,7 +30,7 @@
             <div class="error"></div>
             <input id="lname" placeholder="Last Name" type="text"><br>
         </div>
-        <button class="center cntrl" id="button_submit" type="submit" onclick="window.location.href='/';">Sign-up</button><br>
+        <button class="center cntrl black" id="button_submit" type="submit" onclick="window.location.href='/';">Sign-up</button><br>
     </form>
 <!-- opens jsquery, $ is for jsquery
     The jQuery or $ function is a powerful and widely used JavaScript library that provides a simplified way to interact with HTML documents,
@@ -69,10 +69,11 @@
     </script>
 <!--     <h3 class="center font disc"><span class="redfont">ANNOYING BUG: I tried several ways to redirect after submission,<br>-->
 <!--     But, using one way was giving up another feature. </span></h3><br>-->
+<footer class="bottom">
     <h3 class="center font disc">Our newsletter is owned by a developer.<br>
     We mostly talk about business, self-improvement, wisdom,<br>
     learning, and things connected to these topics.</h3><br>
 
     <h4 class="center font disc">More features coming soon.</h4>
-    <h4 class="center font disc">Complying with GDPR, email us to unsubscribe.</h4>
+    <h4 class="center font disc">Complying with GDPR, email us to unsubscribe.</h4></footer>
 {% endblock content %}
