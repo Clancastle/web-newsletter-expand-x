@@ -5,7 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'den'
+    app.config['SECRET_KEY'] = 'de 6i6dycj ; [ 8ft n'
 
 
     from .views import views

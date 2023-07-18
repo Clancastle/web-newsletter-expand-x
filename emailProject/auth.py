@@ -1,6 +1,7 @@
-from flask import request, render_template, Blueprint, redirect, jsonify
+from flask import request, render_template, Blueprint, redirect, jsonify, url_for
 import re
 import sqlite3
+
 
 auth = Blueprint('auth', __name__)
 k = "k string"
@@ -41,7 +42,6 @@ def signup():
                 un_age = None
                 validation_passed = False
 
-
             if re.match(e_re, un_email) and len(un_email) < 500:
                 print('validation: email passed')
             else:
@@ -67,17 +67,10 @@ def signup():
 
         # print(request.form)
 
-        # if not email or not age or not fname or not lname:
-        #     return jsonify({'success': False, 'message': 'All fields are required.'})
-        #
-        # return jsonify({'success': True, 'message': 'Form submitted successfully.'})
         if validation_passed:
-            return redirect('/')
+            return redirect(url_for('views.home'))
         else:
-            return redirect('k-signup')
-
-    if request.method == "GET":
-        pass
+            return redirect(url_for('auth.unsubscribe'))
 
     return render_template('signup.html')
 
