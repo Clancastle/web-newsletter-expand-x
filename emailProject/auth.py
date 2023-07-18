@@ -63,7 +63,7 @@ def signup():
         except Exception as e:
             print(str(e))
 
-            # send(fname, un_email)
+            #send(un_fname, un_email)
 
         cursor.close()
         conn.close()

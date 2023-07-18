@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/main.css">
+    <script type="text/javascript" defer src="{{ url_for('static', filename='signup.js') }}"></script>
 
     {% block title %}
     <title>Kaizen</title>
@@ -14,12 +15,26 @@
 </head>
 
 <body>
-<!--    <nav>-->
-<!--        <button>MENU</button>-->
-<!--        <div>-->
-<!--            <a></a> &lt;!&ndash;for navbar, links to pages, etc&ndash;&gt;-->
-<!--        </div>-->
-<!--    </nav>-->
+    <nav class="navbar">
+      <button class="menu-toggle" onclick="toggleMenu()" style="float: right;">MENU</button>
+      <div class="menu" id="menu">
+        <a href="#home">Home</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact Me</a>
+        <div class="section">
+          <a href="#portfolio">Portfolio</a>
+          <a href="#cv">CV</a>
+          <a href="#projects">Previous Projects</a>
+        </div>
+        <div class="section">
+          <a href="#newsletter">Newsletter</a>
+          <a href="#signup">Signup</a>
+          <a href="#unsubscribe">Unsubscribe</a>
+          <a href="#past-issues">Past Issues</a>
+          <a href="#quotes">Motivational Quotes</a>
+        </div>
+      </div>
+    </nav>
     
     <!--make some menu, where i can access past issues, nad i can access some quotes or some images.-->
     <div class="container">{% block content %}{% endblock %}</div>

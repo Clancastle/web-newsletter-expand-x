@@ -7,6 +7,15 @@ const submitButton = document.getElementById('button_submit');
 
 submitButton.disabled = true; // Disable submit button initially
 
+function toggleMenu() {
+  var menu = document.getElementById("menu");
+  if (menu.style.display === "block") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "block";
+  }
+}
+
 form.addEventListener('submit', e => {
   e.preventDefault();
   validateInputs();
