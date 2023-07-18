@@ -80,7 +80,10 @@ input:hover {
   color: #3a5a40;
   background-color: #DAD7CD;
 }
-
+.input-field {
+  width: 145px; /* Adjust the width as needed */
+  padding: 10px;
+}
 #no_regret {
   font-size: 25px;
   font-weight: 400;

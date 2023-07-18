@@ -10,25 +10,26 @@
         <h1 class="center font content-wrapper black_text" id="sign-up-text">Sign up for our newsletter.</h1>
         <img src="static/f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
     </div>
+    <p class="center font black white_text disc">Note: You'll get an email upon submission. If you don't there is a problem on either side.</p>
     <form id="form" method="POST" action="{{ url_for('auth.signup') }}"> <!--doesnt work(POST)-->
         <div class="center cntrl">
             <h1 id="no_regret " class="black_text">You won't regret.</h1>
         </div>
         <div class="center cntrl"><br>
             <div class="error"></div>
-            <input id="email" type="text" placeholder="Email"><br>
+            <input class='input-field' id="email" type="text" placeholder="Email"><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input id="age" placeholder="Age" type="number" step="1" min="12" max="100"><br>
+            <input class='input-field' id="age" placeholder="Age" type="number" step="1" min="12" max="100"><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input id="fname" placeholder="First Name" type="text"><br>
+            <input class='input-field' id="fname" placeholder="First Name" type="text"><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input id="lname" placeholder="Last Name" type="text"><br>
+            <input class='input-field' id="lname" placeholder="Last Name" type="text"><br>
         </div>
         <button class="center cntrl black" id="button_submit" type="submit" onclick="window.location.href='/';">Sign-up</button><br>
     </form>
