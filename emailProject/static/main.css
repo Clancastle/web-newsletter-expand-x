@@ -10,7 +10,10 @@ body {
 .black {
     background-color: black;
 }
-
+.required {
+    color: red;
+    margin-left: 5px;
+}
 .bottom {
   bottom: 0;
   right: 0; /* Align the navbar to the right */

@@ -6,7 +6,6 @@
 {% endblock %}
 {% block content %}
     <div class="content-wrapper">
-    <!--make some menu, where i can access past issues, nad i can access some quotes or some images.-->
         <h1 class="center font content-wrapper black_text" id="sign-up-text">Sign up for our newsletter.</h1>
         <img src="static/f48574280b3fb9ea8d06d01ade9ff530.jpg" class="center" id="img_sait" alt="Saitama Motivation">
     </div>
@@ -17,19 +16,23 @@
         </div>
         <div class="center cntrl"><br>
             <div class="error"></div>
-            <input class='input-field' id="email" type="text" placeholder="Email"><br>
+            <label for="email"><span class="font">Email</span><span class="required">*</span></label>
+    <input class='input-field' id="email" type="text" placeholder="Email" required><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input class='input-field' id="age" placeholder="Age" type="number" step="1" min="12" max="100"><br>
+            <label for="age"><span class="font">Age</span> <span class="required">*</span></label>
+            <input class='input-field' id="age" placeholder="Age" type="number" step="1" min="12" max="100" required><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input class='input-field' id="fname" placeholder="First Name" type="text"><br>
+            <label for="fname"><span class="font">First Name</span><span class="required">*</span></label>
+            <input class='input-field' id="fname" placeholder="First Name" type="text" required><br>
         </div>
         <div class="center cntrl">
             <div class="error"></div>
-            <input class='input-field' id="lname" placeholder="Last Name" type="text"><br>
+            <label for="lname"><span class="font">Last Namen</span> <span class="required">*</span></label>
+            <input class='input-field' id="lname" placeholder="Last Name" type="text" required><br>
         </div>
         <button class="center cntrl black" id="button_submit" type="submit" onclick="window.location.href='/';">Sign-up</button><br>
     </form>
