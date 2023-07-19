@@ -1,4 +1,5 @@
-from flask import request, render_template, Blueprint, redirect, jsonify, url_for
+from flask import request, render_template, Blueprint
+
 import re
 import sqlite3
 from .entryEmail import send
