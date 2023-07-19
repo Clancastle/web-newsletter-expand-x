@@ -1,7 +1,7 @@
 from flask import request, render_template, Blueprint, redirect, jsonify, url_for
 import re
 import sqlite3
-from entryEmail import send
+from .entryEmail import send
 
 
 auth = Blueprint('auth', __name__)
@@ -60,10 +60,16 @@ def signup():
             for i in data:
                 print(i)
             print(un_fname, un_lname, un_age, un_email)
-        except Exception as e:
-            print(str(e))
 
             send(un_fname, un_email)
+
+
+        except Exception as error:
+            cursor.execute('CREATE TABLE IF NOT EXISTS errors (first_name VARCHAR(20), last_name VARCHAR(25), age INT, email VARCHAR(249), error VARCHAR(254))')
+            cursor.execute('INSERT INTO errors (first_name, last_name, age, email, error) VALUES (?, ?, ?, ?, ?)', (un_fname, un_lname, un_age, un_email, error))
+            print(str(error))
+
+
 
         cursor.close()
         conn.close()

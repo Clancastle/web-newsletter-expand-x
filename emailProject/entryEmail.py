@@ -2,7 +2,6 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-dennis = 'dennisungureanu0@gmail.com'
 
 def send(fname, email):
 
@@ -27,6 +26,7 @@ def send(fname, email):
         <p>Thank you for joining us on this journey of self-improvement!</p>
         <p>Best regards,<br>Your Newsletter Team</p>
     </body>
+    
     <!-- <footer><a href="http://127.0.0.1:5000/unsubscribe">Unsubscribe</a>From our newsletter</footer> -->
 
     </html>
@@ -46,7 +46,6 @@ def send(fname, email):
         smtp.login(user, password)
         smtp.sendmail(user, email, message.as_string())
 
-send('User', dennis)
-
+send('John', '2thethreefriends@gmail.com')
 
 
