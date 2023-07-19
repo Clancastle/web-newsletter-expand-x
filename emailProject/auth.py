@@ -1,7 +1,7 @@
 from flask import request, render_template, Blueprint, redirect, jsonify, url_for
 import re
 import sqlite3
-# from entryEmail import send
+from entryEmail import send
 
 
 auth = Blueprint('auth', __name__)
@@ -63,7 +63,7 @@ def signup():
         except Exception as e:
             print(str(e))
 
-            #send(un_fname, un_email)
+            send(un_fname, un_email)
 
         cursor.close()
         conn.close()
